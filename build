@@ -1,0 +1,4 @@
+cd src
+javac -cp .:../lib/* -d ../classes net/skytreader/kode/TaskTimer/TaskTimerMain.java
+cd ../classes
+jar -cvf ../../bin/tasktimerv$1.jar com/
