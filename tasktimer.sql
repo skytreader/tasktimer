@@ -4,7 +4,10 @@ CREATE TABLE IF NOT EXISTS tasks(
 ) ENGINE = INNODB;
 
 CREATE TABLE IF NOT EXISTS timelogs(
-    timestarted DATETIME NOT NULL,
+    /*
+    Because no two events may start that simultaneously.
+    */
+    timestarted DATETIME NOT NULL PRIMARY KEY,
     timeended DATETIME NOT NULL,
     taskid INTEGER NOT NULL,
     FOREIGN KEY (taskid) REFERENCES tasks (taskid)
