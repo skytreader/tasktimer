@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS tasks(
+    taskid INTEGER AUTO_INCREMENT PRIMARY KEY,
+    taskperformed VARCHAR(140) UNIQUE NOT NULL
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS timelogs(
+    timestarted DATETIME NOT NULL,
+    timeended DATETIME NOT NULL,
+    taskid INTEGER NOT NULL,
+    FOREIGN KEY (taskid) REFERENCES tasks (taskid)
+) ENGINE = INNODB;
